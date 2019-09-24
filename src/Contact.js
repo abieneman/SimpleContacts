@@ -18,16 +18,6 @@ class Contact extends Component {
     }
 
     componentDidMount() {
-        // console.log(this.props.test);
-        // let option = document.createElement("option");
-        // option.text = "All Contacts";
-        // //let newObject = {value: "All Contacts", label: "All Contacts" }
-        // this.myOptions.push(option);
-        // for(let i = 0; i < this.props.test.length; i++) {
-        //     //newObject = { value: this.props.test[i], label: this.props.test[i] }
-        //     option.text = this.props.test[i];
-        //     this.myOptions.push(option);
-        // }
         this.mySelector = document.getElementById(`id:${this.props.info.id}`);
         let option = document.createElement("option");
         option.text = "-";

@@ -1,3 +1,18 @@
+Assignment:
+Createa  react app for a sales representative to view and manager their business contacts.
+
+Criteria:
+-Allows the user to create a new contact
+-Allows the user to update a contact
+-Allows the user to delete a contact
+-Create a named group of contacts
+-Update a named gorup of contacts
+-Delete a named group of contacts
+Notes:
+-Use state to store contacts
+-Does NOT need to use a backend or database. It is ok if contacts are lost on refresh.
+-Does NOT need to use any sort of authentication
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

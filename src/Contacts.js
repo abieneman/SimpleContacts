@@ -69,11 +69,11 @@ class Contacts extends Component {
         if(this.mySelector.value == "All Contacts") {
             temp = this.state.contacts.map(data => <Contact groups={this.state.groups} selectId={this.state.counter2++} info={data} updateContact={this.updateContact} delete={this.deleteContact} add={this.addToGroup} remove={this.removeFromGroup} />)
         } else {
-            myGroup = this.state.groups.filter(group => group.groupName == this.mySelector.value)
+            myGroup = this.state.groups.find(group => group.groupName == this.mySelector.value)
             let temp3 = [];
-            for(let i = 0; i < myGroup[0].members.length; i++) {
-                let temp2 = this.state.contacts.filter(contact => contact.id == myGroup[0].members[i])
-                temp3.push(temp2[0]);
+            for(let i = 0; i < myGroup.members.length; i++) {
+                let temp2 = this.state.contacts.find(contact => contact.id == myGroup.members[i])
+                temp3.push(temp2);
             }
             temp = temp3.map(data => <Contact groups={this.state.groups} test2={this.state.test2} test={this.state.test} info={data} updateContact={this.updateContact} delete={this.deleteContact} add={this.addToGroup} remove={this.removeFromGroup}/>)
         }
@@ -120,7 +120,6 @@ class Contacts extends Component {
     }
     
     deleteGroup = () => {
-        //dostuff
         let name = this.mySelector.value;
         let found = false;
         let j = 0;
@@ -173,8 +172,8 @@ class Contacts extends Component {
         if(this.mySelector.value == "All Contacts") {
             alert("cannot remove from All Contacts, try delete instead");
         } else {
-            let myGroup = this.state.groups.filter(group => group.groupName == this.mySelector.value);
-            myGroup[0].members.splice(myGroup[0].members.indexOf(id), 1);
+            let myGroup = this.state.groups.find(group => group.groupName == this.mySelector.value);
+            myGroup.members.splice(myGroup.members.indexOf(id), 1);
             this.displayContacts();
         }
     }
